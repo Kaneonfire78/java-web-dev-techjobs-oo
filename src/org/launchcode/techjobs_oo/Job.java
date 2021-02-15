@@ -1,5 +1,6 @@
 package org.launchcode.techjobs_oo;
 
+import javax.lang.model.element.Name;
 import java.util.Objects;
 
 public class  Job {
@@ -45,6 +46,35 @@ public class  Job {
         return Objects.hash(getId());
     }
 
+    @Override
+    public String toString() {
+
+        if (name.equals("")) {
+           name = "Data Not Available";
+        }
+        if (employer.getValue()== "") {
+            employer.setValue("Data Not available");
+        }
+        if (location.getValue()== "") {
+            location.setValue("Data Not Available");
+        }
+        if (positionType.getValue()== "") {
+            location.setValue("Data Not Available");
+        }
+        if (coreCompetency.getValue()== "") {
+            coreCompetency.setValue("Data Not Available");
+        }
+            return
+                    "\n Id: " + id +
+                            "\n Name: " + name +
+                            "\n Employer: " + employer +
+                            "\n Location: " + location +
+                            "\n PositionType: " + positionType +
+                            "\n CoreCompetency: " + coreCompetency +
+                            "\n"
+                    ;
+
+    }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.

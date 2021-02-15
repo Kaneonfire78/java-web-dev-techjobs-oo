@@ -44,6 +44,34 @@ public class JobTest {
         System.out.println(job4.equals(job5));
     }
 
+    @Test
+    public void testFirstAndLastLineToString() {
+//  Should return true
+        job3.toString();
+        char firstChar = job3.toString().charAt(0);
+        char lastChar = job3.toString().charAt(job3.toString().length() - 1);
+
+        assertTrue(firstChar == lastChar);
+
+    }
+
+    @Test
+    public void testFieldsAndData() {
+
+       String format =
+               "\n Id: " + job3.getId() +
+               "\n Name: " + job3.getName()  +
+               "\n Employer: " + job3.getEmployer() +
+               "\n Location: " + job3.getLocation() +
+               "\n PositionType: " + job3.getPositionType() +
+               "\n CoreCompetency: " + job3.getCoreCompetency() +
+               "\n";
+
+        assertEquals(format,job3.toString());
+
+    }
+
+    }
 
 
 
@@ -51,4 +79,3 @@ public class JobTest {
 
 
 
-}
